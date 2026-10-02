@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contactless measurement of emotion physiology during short films - Concordance (archive)</title>
+<link rel="canonical" href="https://discourse.igelsociety.org/t/contactless-measurement-of-emotion-physiology-during-short-films/199/">
+<link rel="icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_32x32.png">
+<link rel="apple-touch-icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_180x180.png">
+<link rel="stylesheet" href="/archive.css">
+</head>
+<body class="page-topic">
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="archive-banner" role="note">This forum is archived and read-only. Snapshot taken 2026-10-01.</div>
+<header class="site-header">
+<a class="site-brand" href="/">
+<img class="site-logo" src="/uploads/default/original/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0.png" alt="">
+<span class="site-title">Concordance</span>
+</a>
+<nav class="site-nav" aria-label="Site">
+<a href="/">Home</a>
+<a href="/search/">Search</a>
+</nav>
+</header>
+<main id="content">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+&rsaquo; <a href="/c/igel2022/30/">IGEL2022</a>
+</nav>
+<div class="topic" data-pagefind-body>
+<h1 data-pagefind-meta="title">Contactless measurement of emotion physiology during short films</h1>
+<p class="tags">Tags: <span data-pagefind-filter="tag">Emotion</span>, <span data-pagefind-filter="tag">Film</span>, <span data-pagefind-filter="tag">Poster</span></p>
+<article class="post" id="post-1">
+<header class="post-header">
+<span class="post-author"><span class="author-name">James R. DeShazo</span> <span class="username">@James_DeShazo</span></span>
+<a class="post-number" href="#post-1">#1</a>
+<time datetime="2022-07-01T00:02:28Z">2022-07-01 00:02 UTC</time>
+</header>
+<div class="post-body">
+<p><img src="/images/emoji/twitter/speech_balloon.png?v=12" title=":speech_balloon:" class="emoji" alt=":speech_balloon:"> <strong>Speaker</strong>: Wu Si Jia</p>
+<p><img src="/images/emoji/twitter/classical_building.png?v=12" title=":classical_building:" class="emoji" alt=":classical_building:"> <strong>Affiliation</strong>: Department of Applied Psychology and Human Development, University of Toronto</p>
+<p><strong>Title</strong>: Contactless measurement of emotion physiology during short films</p>
+<blockquote>
+<p><strong>Abstract</strong>: Emotions have three aspects: experiential, behavioral, and physiological. Measurement of the physiological aspect has been challenging. We hypothesized that different emotion-evoking films may produce distinctive facial blood flow patterns as physiological signatures of emotions. We created a novel contactless transdermal optical imaging system that uses a conventional video camera non-intrusively to capture facial blood flows. We imaged the faces of people viewing films that elicited joy, sadness, disgust, fear, or a neutral state. Using machine learning, these emotional states involved different blood flow patterns. This method would be useful to measure responses from people with diverse ethnic backgrounds.</p>
+</blockquote>
+<br>
+<p><img src="/images/emoji/twitter/movie_camera.png?v=12" title=":movie_camera:" class="emoji" alt=":movie_camera:"> [example to be replaced]</p>
+<br>
+<p><img src="/images/emoji/twitter/newspaper.png?v=12" title=":newspaper:" class="emoji" alt=":newspaper:"> <strong>Long abstract</strong></p>
+   Films elicit strong emotions. Understanding these emotions requires examination of three aspects: experiential, behavioral, and physiological. The last of the three remains the most challenging. Experientially, we recognize states within ourselves as happy, angry, or disgusted; we can report and discuss them with others. Behaviorally, we can express emotions, in smiles, grimaces, and certain kinds of actions. Physiologically, emotions are accompanied by activities controlled by the autonomic nervous system, which can be observed by means of blood flow changes. While extreme changes in blood flow are observable on the complexion (e.g., flushed, or pale), subtle changes may only be observed with use of intrusive instruments (e.g., electrocardiography, electromyography, functional Magnetic Resonance Imaging). These methods are often obstructive to the experience of viewing films or reading. To combat this, we devised a system called transdermal optical imaging non-intrusively to capture facial blood flows. We hypothesized that different emotion-evoking films may produce distinctive facial blood flow patterns that can serve as physiological signatures of emotions. 
+<p>To test our hypothesis, we recruited 314 adults (nmales = 142, Mage = 23.77 years, SDage = 7.06) of various ethnic backgrounds in Toronto, Canada. Informed consents were obtained prior to commencing the experiment. Participants were seen individually in a laboratory. They were asked to sit before a computer and view a relaxing film of clouds floating through the sky for one minute. Next, they viewed ten films, two for each of the following emotional states: joy, sadness, disgust, fear, and a neutral state. The order of films was counterbalanced. Each emotion-evoking film was presented for 25 seconds with 35 seconds of a blank screen displayed in between films. The entire experiment took approximately 30 minutes.</p>
+<p>While participants viewed emotion-evoking films, their faces were recorded by a conventional video camera. Additionally, their vascular pulse was measured concurrently using BIOPAC MP150. Both contributed to the construction of a transdermal optical imaging system for assessment of physiological signatures of emotions. Specifically, facial videos were analyzed using state-of-art machine learning algorithms to measure facial blood flows. The methodology capitalizes on the fact that the video camera captures images in multiple bitplanes in the Red, Green, and Blue (RGB) channels. Given the color signature differences between hemoglobin and melanin, it is possible to select bitplanes that are most reflective of the hemoglobin concentration changes and discard those that are not. To help us select such bitplanes, we used the data from the BIOPAC MP150. We notch-filtered the raw signals in “the pulse band” (0.7-2 Hz) from each of the RGB channel and performed Neural Network algorithm on MATLAB. This frequency is approximately that of the human heartbeat. We used the transdermal data in the pulse band as the input and the pulse data from BIOPAC MP150 as the target. Next, we performed a Convolutional Neural Network analysis to predict the five emotional states based on facial blood flows in the pulse band. We did this because existing studies have shown that heart-driven pulses carry differentiating information about emotions. We assessed our model’s performance in differentiating five emotional states based on frequencies in the pulse band using d prime (d^’) from Signal Detection Theory. This index measures a model’s ability to discriminate between the target emotion (e.g., joy) and all other non-target emotional states (e.g., sadness, disgust, fear, and the neutral state) while controlling for response biases.</p>
+<p>We found that using the pulse band data, our model discriminated between the target emotion and the non-target emotions significantly above the chance level of zero (t-tests, df=99; ps&lt;0.001, two tailed) for joy, sadness, and disgust. Discriminability was significantly below zero for fear and the neutral state (t-test, df=99; p&lt;0.001, two tailed). When we inspected the rates of true positives and false positives in the neutral state, we found that there was a much higher rate of false positives than true positives. As a result, the mean d^'s were significantly below zero, suggesting that our model for the neutral state tended to mistake some other emotional states as neutral. A similar outcome was true for fear, but to a much lesser degree than that for the neutral state.</p>
+<p>This study confirmed our hypothesis that facial blood flow changes, which occurred when viewing short emotion-evoking films, were emotion-specific and common across different individuals. Our results further support the use of transdermal optical imaging as a viable non-intrusive method that reveals physiological signatures of different emotions. We believe the technology holds great promise for future research on emotions, particularly under naturalistic settings of reading short-stories, viewing art, or listening to music, by participants from diverse ethnic backgrounds.</p>
+</div>
+</article>
+</div>
+
+</main>
+<footer class="site-footer">
+<p>Archive snapshot taken 2026-10-01 &middot; Discourse 2.8.0.beta11</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Annotation and Prediction of Emotion Arcs of Movies - Concordance (archive)</title>
+<link rel="canonical" href="https://discourse.igelsociety.org/t/annotation-and-prediction-of-emotion-arcs-of-movies/362/">
+<link rel="icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_32x32.png">
+<link rel="apple-touch-icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_180x180.png">
+<link rel="stylesheet" href="/archive.css">
+</head>
+<body class="page-topic">
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="archive-banner" role="note">This forum is archived and read-only. Snapshot taken 2026-10-01.</div>
+<header class="site-header">
+<a class="site-brand" href="/">
+<img class="site-logo" src="/uploads/default/original/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0.png" alt="">
+<span class="site-title">Concordance</span>
+</a>
+<nav class="site-nav" aria-label="Site">
+<a href="/">Home</a>
+<a href="/search/">Search</a>
+</nav>
+</header>
+<main id="content">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+&rsaquo; <a href="/c/igel2023/31/">IGEL 2023</a>
+</nav>
+<div class="topic" data-pagefind-body>
+<h1 data-pagefind-meta="title">Annotation and Prediction of Emotion Arcs of Movies</h1>
+<article class="post" id="post-1">
+<header class="post-header">
+<span class="post-author"><span class="author-name">Andreas van Cranenburgh</span> <span class="username">@andreasvc</span></span>
+<a class="post-number" href="#post-1">#1</a>
+<time datetime="2023-08-31T12:32:32Z">2023-08-31 12:32 UTC</time>
+</header>
+<div class="post-body">
+<p><img src="/images/emoji/twitter/speech_balloon.png?v=12" title=":speech_balloon:" class="emoji" alt=":speech_balloon:"> <strong>Speaker</strong>: Andreas van Cranenburgh <span class="mention">@andreasvc</span></p>
+<p><img src="/images/emoji/twitter/classical_building.png?v=12" title=":classical_building:" class="emoji" alt=":classical_building:"> <strong>Affiliation</strong>: University of Groningen</p>
+<p><strong>Title</strong>: <em>Annotation and Prediction of Emotion Arcs of Movies</em></p>
+<blockquote>
+<p><strong>Abstract</strong> (long version below): Narratologists and data scientists alike have long desired to identify a small number of “universal” story archetypes. One such approach, popularized by Kurt Vonnegut, focuses on how emotions develop over story time. This approach has been implemented computationally using automatic sentiment analysis, which attracted criticism due to the limitations of such tools to deal with the complexities of narratives. We contribute to this dialogue with an empirical study of the task of automatically identifying the emotional story arc of movies using subtitles. We validate the emotion arcs against manually annotated labels. The results highlight both challenges and strengths.</p>
+</blockquote>
+<br>
+<p><img src="/images/emoji/twitter/movie_camera.png?v=12" title=":movie_camera:" class="emoji only-emoji" alt=":movie_camera:"></p><div class="onebox lazyYT lazyYT-container"><a href="https://www.youtube.com/watch?v=kGHaHnasmwI" target="_blank" rel="noopener nofollow ugc"><img class="ytp-thumbnail-image" src="/uploads/default/original/1X/7aa2ae7ca9520cb90e9c38a47f519e24217eec97.jpeg" title="Annotation and Prediction of Emotion Arcs of Movies – Van Cranenburgh (IGEL 2023)" width="480" height="360" alt="Annotation and Prediction of Emotion Arcs of Movies – Van Cranenburgh (IGEL 2023)"><span class="video-title">Annotation and Prediction of Emotion Arcs of Movies – Van Cranenburgh (IGEL 2023)</span></a></div>
+
+<br>
+<p><img src="/images/emoji/twitter/newspaper.png?v=12" title=":newspaper:" class="emoji" alt=":newspaper:"> <strong>Long abstract</strong></p>
+<p><strong>Introduction</strong></p>
+<p>Several narratologists have argued that all stories originate from a limited set of story structures. Vonnegut (2005) claims that all stories can be plotted through six basic story shapes that abstractly plot good vs ill fortune as a function of time throughout the story (henceforth: emotion arcs). Research by Jockers (2015) and Reagan et al. (2016) purports to conrm this hypothesis using automatic sentiment analysis and machine learning to identify fundamental shapes of story arcs. Such techniques have also been applied to movies (Indico Data, 2015; Del Vecchio et al 2019). These conclusions attracted criticism. First, sentiment analysis is a crude tool for approximating emotions in narrative, a task for which most tools were not designed and can fail spectacularly at: “At least for literature, sentiment analysis is fractally bad: the closer you look at what it’s actually doing, the more problems you nd” (Bowers &amp; Dombrowski, 2021). Second, Enderle (2016) argues that the methods that reduce story shapes to six fundamental types are producing algorithmic artifacts since random noise will also result in the same “fundamental” shapes. Nevertheless, this line of research continues (e.g., Pianzola et al., 2020, Chun 2021, Bizzoni et al., 2022), so a critical empirical appraisal is in order.</p>
+<p><strong>Method</strong></p>
+<p>In this paper, we assess how well sentiment analysis can predict the emotional arc of movies as annotated through manual annotation, and analyze where the method</p>
+<p>succeeds and falters. We adopt Vonnegut’s (2005) notion of a good vs ill fortune axis. Two annotators watched the movies Up (2009) and Guardians of the Galaxy (2014), and manually annotated each minute on a 5-point scale (very negative, somewhat negative, neutral/mixed, somewhat positive and very positive).</p>
+<p>Predictions are based on automatic sentiment analysis of the subtitles of the movies. We consider the following sentiment analysis methods: lexicon-based (Hu &amp; Liu, 2004), VADER (Hutto &amp; Gilbert, 2014), and a state-of-the-art neural model (Hugging Face, 2022) trained on a movie review dataset (Socher et al., 2013). The subtitles of each minute are aggregated and fed to the sentiment analysis method, resulting in a score [-1, 1]. The scores are scaled to unit variance (however, we do not apply z-scoring, since the dierence between a positive and negative score should be preserved). The annotations and subtitles are temporally aligned with absolute timestamps; in order to preserve this alignment, we do not apply any transformation that would disrupt this alignment, such as Dynamic Time Warping or other algorithmic methods that reduce the story arc to a supposedly universal, basic plot shape.</p>
+<p>The annotations and sentiment analysis predictions are then plotted. The scores are processed by Lowess which smooths the signal using a moving average (similar to Indico Data, 2015); however, the average is weighted such that more distant points have less inuence on the outcome. The “frac” parameter of Lowess determines the amount of smoothing to apply. In this work we use frac=0.1, which means that the moving average is calculated using the surrounding 10% of datapoints; higher values lead to a smoother curve with less detail. In our experiments, frac=0.1 appears to be a good trade-o; a more systematic evaluation is left for future work.</p>
+<p>How can the delity of an emotional story arc be determined? It is tempting to come up with simplistic quantitative metrics: accuracy, (rank) correlation, area between the curves, etc. However, Vonnegut (2015) argued that the precise amplitude and temporal aspects of the shapes are details that should be abstracted away in basic story shapes. However, it is dicult to formally dene how much detail a story shape should contain, and the annotation is a subjective task. Therefore, reporting a quantitative evaluation would give a misleading sense of objectivity, and we opt for a qualitative analysis instead. We leave formalizing the evaluation to future work, as it is an important goal, but should not be done in an ad hoc manner.</p>
+<p><strong>Brief summary of results</strong></p>
+<p>The results highlight the following. Closed Caption (CC; Wikipedia 2023) subtitles provide more accurate emotion arcs than regular subtitles (Figure 1). The neural method results in the best overall emotion arcs (Figure 2). Sentiment analysis struggles with humor and sarcasm, and emotions conveyed visually or non-verbal audio. However, many peaks and valleys in the manually annotated emotion arcs are predicted accurately by automatic sentiment analysis (Figure 2-3). Future work should incorporate sentiment analysis of visual and audio signals.</p>
+<p></p><a class="lightbox" href="/uploads/default/original/1X/dad6cb890f719799bbf761b79daea3dd6d47682c.png" title="page3image50911120"><img src="/uploads/default/optimized/1X/dad6cb890f719799bbf761b79daea3dd6d47682c_2_505x271.png" alt="page3image50911120" width="505" height="271" srcset="/uploads/default/optimized/1X/dad6cb890f719799bbf761b79daea3dd6d47682c_2_505x271.png, /uploads/default/optimized/1X/dad6cb890f719799bbf761b79daea3dd6d47682c_2_757x406.png 1.5x, /uploads/default/original/1X/dad6cb890f719799bbf761b79daea3dd6d47682c.png 2x"></a>
+<p>Figure 1: Manual annotations compared with predicted arcs based on subtitles with and without closed captions.</p>
+<p></p><a class="lightbox" href="/uploads/default/original/1X/d377532faac6849cb6750435e9829ffb751379a5.png" title="page3image50921104"><img src="/uploads/default/optimized/1X/d377532faac6849cb6750435e9829ffb751379a5_2_505x303.png" alt="page3image50921104" width="505" height="303" srcset="/uploads/default/optimized/1X/d377532faac6849cb6750435e9829ffb751379a5_2_505x303.png, /uploads/default/optimized/1X/d377532faac6849cb6750435e9829ffb751379a5_2_757x454.png 1.5x, /uploads/default/original/1X/d377532faac6849cb6750435e9829ffb751379a5.png 2x"></a>
+<p>Figure 2: Manual annotations compared with automatic sentiment analysis methods with highlights of important story events.</p>
+<p></p><a class="lightbox" href="/uploads/default/original/1X/5ea1c7c53ca158fad5e254f1ce12d8abc6a366bd.png" title="page4image50919648"><img src="/uploads/default/optimized/1X/5ea1c7c53ca158fad5e254f1ce12d8abc6a366bd_2_501x290.png" alt="page4image50919648" width="501" height="290" srcset="/uploads/default/optimized/1X/5ea1c7c53ca158fad5e254f1ce12d8abc6a366bd_2_501x290.png, /uploads/default/optimized/1X/5ea1c7c53ca158fad5e254f1ce12d8abc6a366bd_2_751x435.png 1.5x, /uploads/default/optimized/1X/5ea1c7c53ca158fad5e254f1ce12d8abc6a366bd_2_1002x580.png 2x"></a>
+<p>Figure 3: Manual annotations compared with automatic sentiment analysis methods with highlights of important story events.</p>
+<p><strong>References</strong></p>
+<p>Bizzoni, Yuri, Telma Peura, Mads Thomsen, Kristoer Nielbo (2022). Fractal Sentiments and Fairy Tales - Fractal scaling of narrative arcs as predictor of the perceived quality of Andersen’s fairy tales. Journal of Data Mining &amp; Digital Humanities. <a href="https://doi.org/10.46298/jdmdh.9154" class="inline-onebox" rel="noopener nofollow ugc">#9640 - Fractal Sentiments and Fairy Tales - Fractal scaling of narrative arcs as predictor of the perceived quality of Andersen's fairy tales</a></p>
+<p>Bowers, Katherine and Quinn Dombrowski (2021). Katia and the Sentiment Snobs. <em>The Data-Sitters Club</em>. October 25, 2021. <a href="https://datasittersclub.github.io/site/dsc11.html" class="inline-onebox" rel="noopener nofollow ugc">DSC #11: Katia and the Sentiment Snobs — The Data-Sitters Club</a></p>
+<p>Chun, Jun (2021). SentimentArcs: A Novel Method for Self-Supervised Sentiment Analysis of Time Series Shows SOTA Transformers Can Struggle Finding Narrative Arcs. arXiv eprint 2110.09454. <a href="https://arxiv.org/abs/2110.09454" class="inline-onebox" rel="noopener nofollow ugc">[2110.09454] SentimentArcs: A Novel Method for Self-Supervised Sentiment Analysis of Time Series Shows SOTA Transformers Can Struggle Finding Narrative Arcs</a></p>
+<p>Del Vecchio, Marco, Kharlamov, A., Parry, G., &amp; Pogrebna, G. (2021). Improving productivity in Hollywood with data science: Using emotional arcs of movies to drive product and service innovation in entertainment industries. <em>Journal of the Operational Research Society</em>, 72(5), 1110-1137. <a href="https://doi.org/10.1080/01605682.2019.1705194" rel="noopener nofollow ugc">https://doi.org/10.1080/01605682.2019.1705194</a></p>
+<p>Enderle, Scott (2015). A plot of Brownian noise. <a href="https://senderle.github.io/svd-noise" class="inline-onebox" rel="noopener nofollow ugc">Noise</a></p>
+<p>Hu, Minqing and Bing Liu. Mining and Summarizing Customer Reviews. Proceedings of the ACM SIGKDD International Conference on Knowledge</p>
+<p>Discovery and Data Mining (KDD-2004), Aug 22-25, 2004, Seattle, Washington, USA. <a href="https://doi.org/10.1145/1014052.1014073" rel="noopener nofollow ugc">https://doi.org/10.1145/1014052.1014073</a></p>
+<p>Hugging Face Canonical Model Maintainers (2022). distilbert-base-uncased-netuned-sst-2-english (Revision bfdd146). <a href="https://huggingface.co/distilbert-base-uncased-netuned-sst-2-english" rel="noopener nofollow ugc">https://huggingface.co/distilbert-base-uncased-netuned-sst-2-english</a></p>
+<p>Hutto, C.J. &amp; Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014. <a href="https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/viewPaper/" rel="noopener nofollow ugc">https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/viewPaper/</a> 8109</p>
+<p>Jockers, Matthew L. (2015). Revealing Sentiment and Plot Arcs with the Syuzhet Package. <a href="http://www.matthewjockers.net/2015/02/02/syuzhet/" rel="noopener nofollow ugc">http://www.matthewjockers.net/2015/02/02/syuzhet/</a></p>
+<p>Swaord, Annie (2015). Continuing the Syuzhet discussion. <a href="https://annieswaord.wordpress.com/2015/03/07/continuingsyuzhet/" class="inline-onebox" rel="noopener nofollow ugc">WordPress.com</a></p>
+<p>Pianzola, Federico, Simone Rebora, Gerhard Lauer (2020). Wattpad as a resource for literary studies. Quantitative and qualitative examples of the importance of digital social reading and readers’ comments in the margins. PLoS ONE 15(1): e0226708. <a href="https://doi.org/10.1371/journal.pone.0226708" class="inline-onebox" rel="noopener nofollow ugc">Wattpad as a resource for literary studies. Quantitative and qualitative examples of the importance of digital social reading and readers’ comments in the margins</a></p>
+<p>Reagan, Andrew J., Mitchell, L., Kiley, D., Danforth, C. M., &amp; Dodds, P. S. (2016). The emotional arcs of stories are dominated by six basic shapes. EPJ Data Science, 5(1), 1-12. <a href="https://doi.org/10.1140/epjds/s13688-016-0093-1" class="inline-onebox" rel="noopener nofollow ugc">The emotional arcs of stories are dominated by six basic shapes | EPJ Data Science | Full Text</a></p>
+<p>Socher, Richard, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D. Manning, Andrew Ng, and Christopher Potts (2013). Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank. In <em>Proceedings of the EMNLP</em>, pages 1631–1642. <a href="https://aclanthology.org/D13-1170" class="inline-onebox" rel="noopener nofollow ugc">Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank - ACL Anthology</a></p>
+<p>Vonnegut, Kurt (2005). At the blackboard: Kurt Vonnegut diagrams the shapes of stories. <a href="https://www.laphamsquarterly.org/arts-letters/blackboard" class="inline-onebox" rel="noopener nofollow ugc">At the Blackboard | Lapham’s Quarterly</a></p>
+<p>Wikipedia contributors (2023). Closed captioning. In Wikipedia, <em>The Free Encyclopedia</em>. Retrieved 14:27, March 18, 2023, from <a href="https://en.wikipedia.org/w/index.php?title=Closed_captioning&amp;oldid=1145" class="inline-onebox" rel="noopener nofollow ugc">Sport - Wikipedia</a> 250594</p>
+</div>
+</article>
+<article class="post" id="post-2">
+<header class="post-header">
+<span class="post-author"><span class="author-name">Franziska Hartung</span> <span class="username">@FranHartung</span></span>
+<a class="post-number" href="#post-2">#2</a>
+<time datetime="2023-09-30T08:50:01Z">2023-09-30 08:50 UTC</time>
+</header>
+<div class="post-body">
+<p>I just asked the annotation software question during your presentation. I used to do a lot of annotation for fMRI studies and there are tools that will make your life easier, transcription faster, and have more accurate timestamps. For videos directly, I would recommend Elan (it’s free from the MPI in Nijmegen <a href="https://archive.mpi.nl/tla/elan" class="inline-onebox" rel="noopener nofollow ugc">ELAN | The Language Archive</a>). If you want to export the audio stream, you could also use Praat (<a href="https://www.fon.hum.uva.nl/praat/" class="inline-onebox" rel="noopener nofollow ugc">Praat: doing Phonetics by Computer</a>).</p>
+</div>
+</article>
+<article class="post" id="post-3">
+<header class="post-header">
+<span class="post-author"><span class="author-name">Andreas van Cranenburgh</span> <span class="username">@andreasvc</span></span>
+<a class="post-number" href="#post-3">#3</a>
+<time datetime="2023-10-04T07:06:17Z">2023-10-04 07:06 UTC</time>
+<span class="reply-to">in reply to <a href="#post-2">#2</a></span>
+</header>
+<div class="post-body">
+<p>Thanks a lot for these suggestions!</p>
+</div>
+</article>
+</div>
+
+</main>
+<footer class="site-footer">
+<p>Archive snapshot taken 2026-10-01 &middot; Discourse 2.8.0.beta11</p>
+</footer>
+</body>
+</html>

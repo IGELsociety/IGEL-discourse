@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Computational Analysis linking the Emotion Arcs of Books and Reader Response - Concordance (archive)</title>
+<link rel="canonical" href="https://discourse.igelsociety.org/t/a-computational-analysis-linking-the-emotion-arcs-of-books-and-reader-response/426/">
+<link rel="icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_32x32.png">
+<link rel="apple-touch-icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_180x180.png">
+<link rel="stylesheet" href="/archive.css">
+</head>
+<body class="page-topic">
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="archive-banner" role="note">This forum is archived and read-only. Snapshot taken 2026-10-01.</div>
+<header class="site-header">
+<a class="site-brand" href="/">
+<img class="site-logo" src="/uploads/default/original/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0.png" alt="">
+<span class="site-title">Concordance</span>
+</a>
+<nav class="site-nav" aria-label="Site">
+<a href="/">Home</a>
+<a href="/search/">Search</a>
+</nav>
+</header>
+<main id="content">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+&rsaquo; <a href="/c/igel2023/31/">IGEL 2023</a>
+</nav>
+<div class="topic" data-pagefind-body>
+<h1 data-pagefind-meta="title">A Computational Analysis linking the Emotion Arcs of Books and Reader Response</h1>
+<p class="tags">Tags: <span data-pagefind-filter="tag">Fiction</span>, <span data-pagefind-filter="tag">computational-method</span>, <span data-pagefind-filter="tag">emotions</span>, <span data-pagefind-filter="tag">narratives</span></p>
+<article class="post" id="post-1">
+<header class="post-header">
+<span class="post-author"><span class="author-name">Federico Pianzola</span> <span class="username">@fpianz</span></span>
+<a class="post-number" href="#post-1">#1</a>
+<time datetime="2023-09-07T14:17:18Z">2023-09-07 14:17 UTC</time>
+</header>
+<div class="post-body">
+<p><img src="/images/emoji/twitter/speech_balloon.png?v=12" title=":speech_balloon:" class="emoji" alt=":speech_balloon:"> <strong>Speaker</strong>: Federico Pianzola, Srishti Sharma, Frank Tsiwah</p>
+<p><img src="/images/emoji/twitter/classical_building.png?v=12" title=":classical_building:" class="emoji" alt=":classical_building:"> <strong>Affiliation</strong>: University of Groningen, Netherlands</p>
+<p><strong>Title</strong>: <em>A Computational Analysis Linking the Emotion Arcs of Books and Reader Response</em></p>
+<blockquote>
+<p><strong>Abstract</strong> (long version below): We explore the association between emotions expressed in fictional stories and emotions experienced by their readers. We use 428 English books from 9 different genres (mostly 19-20th Century) and their corresponding reviews from Goodreads. We use sentiment analysis, calculating two different types of values: book sentiment (including the sentiment story arc of each book) and review sentiment. We test our hypotheses using both linear regression models and generalized additive models (GAM) to analyze the association of the sentiment values of books and reviews. Our results show that book sentiment can predict review sentiment, with the ending part of the book being our best predictor, but we also observed different non-linear patterns dependent on genre.</p>
+</blockquote>
+<br>
+<p><img src="/images/emoji/twitter/movie_camera.png?v=12" title=":movie_camera:" class="emoji only-emoji" alt=":movie_camera:"></p><div class="onebox lazyYT lazyYT-container"><a href="https://www.youtube.com/watch?v=f35zeWw7XSk" target="_blank" rel="noopener"><span class="video-title">Linking the Emotion Arcs of Books and Reader Response – Pianzola et al. (IGEL 2023)</span></a></div>
+
+<p><img src="/images/emoji/twitter/open_file_folder.png?v=12" title=":open_file_folder:" class="emoji" alt=":open_file_folder:"> <a href="https://doi.org/10.17605/OSF.IO/XG6D4">Preregistration</a><br>
+<img src="/images/emoji/twitter/open_file_folder.png?v=12" title=":open_file_folder:" class="emoji" alt=":open_file_folder:"> <a href="https://huggingface.co/fpianz/roberta-english-book-reviews-sentiment">Sentiment classifier fine-tuned on fiction and book reviews</a></p>
+<br>
+<p><img src="/images/emoji/twitter/newspaper.png?v=12" title=":newspaper:" class="emoji" alt=":newspaper:"> <strong>Long abstract</strong></p>
+<p>Measuring the long-term effects of reading fiction is a complex endeavour that has outcomes whose reliability is controversial (Kidd and Castano 2013; 2019; Samur, Tops, and Koole 2018). We can be more confident about the impact of fiction in the short term, namely with respect to the various subjective-phenomenal experiences undergone by readers while they engage with captivating fictional characters and their stories. Psychological states like “narrative absorption” (Hakemulder et al. 2017), “reading flow” (Thissen, Menninghaus, and Schlotz 2018), and empathy with characters (Burke et al. 2016) are being measured and associated with discursive features of literary texts with increasing accuracy, and improvements of both theories and methods are constantly achieved. Recently, digital media and computational methods have offered new – and more ecologically valid – ways to look at how readers respond to fiction. Book reviews posted on websites (e.g. Goodreads) or comments written in the margins of digital texts read on mobile apps (e.g. Wattpad) enable a new kind of research – based on statistically reliable and generalizable evidence (cf. Piper 2020) – that can investigate how thousands of readers spontaneously share their thoughts and emotions about books and stories (Rehberg Sedo 2011; Rebora et al. 2019; Bourrier and Thelwall 2020; Pianzola 2021).</p>
+<p>In this study, we aim at leveraging the availability of a huge quantity of book reviews (from Goodreads) to evaluate the emotional impact of fiction on readers. Namely, we will assess whether the emotion represented and expressed in fiction can predict the emotions perceived and expressed by readers in their reviews. For instance, do tragic stories prompt more negative wordings in reviews? The underlying hypothesis is that emotions in stories affect readers and their engagement with and evaluation of the story.</p>
+<p>The plausibility of a direct link between textual emotions and reader response is supported by research that looked at the close relationship between a story’s sentiment on the level of paragraph and the sentiment found in readers’ comments in the margin of such paragraphs (Pianzola, Rebora, and Lauer 2020). Similarly, Jacobs and Kinder (2019) found that  computationally calculated affect scores of words can predict the human liking of small text chunks (~105 words) of a short story. In brief, existing research showed that there is a link between emotions in texts and the emotional response of readers, but we still do not know the details of this kind of relationship in the case of book reviews.</p>
+<p><strong>Hypotheses</strong><br>
+Based on evidence presented in existing research, we formulated the following hypotheses (H) regarding the relationship between emotional patterns in books and their corresponding reviews:<br>
+H1. The sentiment of a book has a positive linear relation with the sentiment of its reviews. That is, if we take two books, the one with a more positive story sentiment will also have a more positive reviews’ sentiment.<br>
+H2. Romance is the genre with the strongest association between story sentiment and reviews’ sentiment.<br>
+H3. The amplitude of sentiment change in the ending part of a story has a stronger linear relation with the reviews’ sentiment than that existing between the overall story sentiment and reviews’ sentiment (H1). That is, the plot influences the readers’ appraisal of a book: i.e. stories ending with a growing positive sentiment elicit reviews with a more positive sentiment than stories ending in a decreasing sentiment.</p>
+<p><strong>Data</strong><br>
+We use 428 English books from 9 different genres (mostly 19-20th Century) and their corresponding reviews from Goodreads.<br>
+To train a Deep Learning classifier (RoBERTa), we used:</p>
+<ul>
+<li>the Dataset for Emotions of Narrative Sequences (DENS) (Liu, Osama, and de Andrade 2019), which contains a combination of 9,710 manually annotated paragraphs (between 40 and 200 tokens long) taken from English literature (Project Gutenberg) and modern narratives by amateur writers (Wattpad, post 2006).</li>
+<li>a dataset of 300 manually annotated (at sentence-level) book reviews from Amazon and LibraryThing (Álvarez-López et al. 2017).</li>
+</ul>
+<p><strong>Methods</strong><br>
+We preregistered our analysis specifying a linear regression model and the covariates to be included in the model.<br>
+Additionally, we used a Generalized Additive Model (GAM) for a more fine-grained analysis of the potential interaction between genre and the unfolding of sentiment throughout the book, and at what point(s) in the book this potential interaction is significant.</p>
+<p><strong>Results</strong></p>
+<ul>
+<li>H1. <em>Accepted</em>: The relation between the sentiment of a book and the sentiment of its reviews can be approximated by a linear fit.</li>
+<li>H2. <em>Rejected</em>: We didn’t find any genre with an association between story sentiment and reviews’ sentiment stronger than that of other genres.</li>
+<li>H3. <em>Unclear</em>: The amplitude of sentiment change in the ending part of a story has a relation with the reviews’ sentiment similar to that existing between the overall story sentiment and reviews’ sentiment (H1).</li>
+</ul>
+<p>There is a significant association between book sentiment and reviews’ sentiment, meaning that the emotions portrayed in a book have an impact on how people evaluate the book. But this association follows different non-linear patterns for different genres.</p>
+<p></p><a class="lightbox" href="/uploads/default/original/1X/96a9e1cd477000f1db81101d89b4a624d277540c.png" title="stats_means_genres"><img src="/uploads/default/optimized/1X/96a9e1cd477000f1db81101d89b4a624d277540c_2_625x500.png" alt="stats_means_genres" width="625" height="500" srcset="/uploads/default/optimized/1X/96a9e1cd477000f1db81101d89b4a624d277540c_2_625x500.png, /uploads/default/optimized/1X/96a9e1cd477000f1db81101d89b4a624d277540c_2_937x750.png 1.5x, /uploads/default/optimized/1X/96a9e1cd477000f1db81101d89b4a624d277540c_2_1250x1000.png 2x"></a><br>
+<strong>Fig. 1.</strong> Pairwise comparison between <strong>book sentiment</strong> of various genres.
+<p></p><a class="lightbox" href="/uploads/default/original/1X/8e7bc8610c0c543aa4c97417e91c3f4527613471.jpeg" title="stats_review_means_genres"><img src="/uploads/default/optimized/1X/8e7bc8610c0c543aa4c97417e91c3f4527613471_2_555x500.jpeg" alt="stats_review_means_genres" width="555" height="500" srcset="/uploads/default/optimized/1X/8e7bc8610c0c543aa4c97417e91c3f4527613471_2_555x500.jpeg, /uploads/default/optimized/1X/8e7bc8610c0c543aa4c97417e91c3f4527613471_2_832x750.jpeg 1.5x, /uploads/default/optimized/1X/8e7bc8610c0c543aa4c97417e91c3f4527613471_2_1110x1000.jpeg 2x"></a><br>
+<strong>Fig. 2.</strong> Pairwise comparison between <strong>reviews’ sentiment</strong> of various genres.
+<p></p><a class="lightbox" href="/uploads/default/original/1X/7e01536b65dc864961287c44687fe28904bf9786.png" title="GAM_romance_diff"><img src="/uploads/default/optimized/1X/7e01536b65dc864961287c44687fe28904bf9786_2_690x426.png" alt="GAM_romance_diff" width="690" height="426" srcset="/uploads/default/optimized/1X/7e01536b65dc864961287c44687fe28904bf9786_2_690x426.png, /uploads/default/optimized/1X/7e01536b65dc864961287c44687fe28904bf9786_2_1035x639.png 1.5x, /uploads/default/optimized/1X/7e01536b65dc864961287c44687fe28904bf9786_2_1380x852.png 2x"></a><br>
+<strong>Fig. 3.</strong> Example of association between sentiment in different parts of books and reviews’ sentiment.<br>
+There is a significant difference (marked in red on the x-axis) between the association of positive and negative book sentences with reviews for romance. A curve above the horizontal line intersecting zero means that positive sentences are positively associated with review sentiment significantly more than negative sentences.<br>
+In brief, in books with more positive reviews, the romance goes on throughout the whole book and there’s a happy ending, but a negative situation often precedes it.
+</div>
+</article>
+</div>
+
+</main>
+<footer class="site-footer">
+<p>Archive snapshot taken 2026-10-01 &middot; Discourse 2.8.0.beta11</p>
+</footer>
+</body>
+</html>

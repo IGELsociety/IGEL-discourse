@@ -1,0 +1,44 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+{{#crumbs}}
+&rsaquo; {{#has_link}}<a href="{{path}}">{{name}}</a>{{/has_link}}{{^has_link}}<span aria-current="page">{{name}}</span>{{/has_link}}
+{{/crumbs}}
+</nav>
+<div class="category" data-pagefind-body>
+<h1 data-pagefind-meta="title">{{name}}</h1>
+{{#has_description}}
+<p class="category-description">{{description}}</p>
+{{/has_description}}
+{{#has_subcategories}}
+<h2>Subcategories</h2>
+<ul class="subcategory-index">
+{{#subcategories}}
+<li class="category-entry"><a class="category-name" href="{{path}}">{{name}}</a> <span class="topic-count">{{topic_count_label}}</span>{{#has_description}} <span class="category-description">{{description}}</span>{{/has_description}}</li>
+{{/subcategories}}
+</ul>
+{{/has_subcategories}}
+<h2>Topics</h2>
+{{#has_topics}}
+<div class="table-wrap">
+<table class="topic-list">
+<thead>
+<tr><th class="col-title">Topic</th><th class="col-tags">Tags</th><th class="col-replies">Replies</th><th class="col-created">Created</th><th class="col-activity">Last activity</th></tr>
+</thead>
+<tbody>
+{{#topics}}
+<tr>
+<td class="col-title"><a href="{{path}}">{{title}}</a>{{#pinned}} <span class="badge">pinned</span>{{/pinned}}</td>
+<td class="col-tags">{{tags}}</td>
+<td class="col-replies">{{replies}}</td>
+<td class="col-created">{{created}}</td>
+<td class="col-activity">{{activity}}</td>
+</tr>
+{{/topics}}
+</tbody>
+</table>
+</div>
+{{/has_topics}}
+{{^has_topics}}
+<p>This category has no topics.</p>
+{{/has_topics}}
+</div>

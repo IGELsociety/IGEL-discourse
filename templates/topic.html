@@ -1,0 +1,30 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+{{#crumbs}}
+&rsaquo; <a href="{{path}}">{{name}}</a>
+{{/crumbs}}
+</nav>
+<div class="topic" data-pagefind-body>
+<h1 data-pagefind-meta="title">{{title}}</h1>
+{{#has_tags}}
+<p class="tags">Tags: {{#tags}}<span data-pagefind-filter="tag">{{name}}</span>{{#comma}}, {{/comma}}{{/tags}}</p>
+{{/has_tags}}
+{{#has_status}}
+<p class="topic-status" role="note">{{status}}</p>
+{{/has_status}}
+{{#posts}}
+<article class="post" id="post-{{number}}">
+<header class="post-header">
+<span class="post-author">{{#has_name}}<span class="author-name">{{display_name}}</span>{{/has_name}}{{#both}} {{/both}}{{#has_handle}}<span class="username">{{handle}}</span>{{/has_handle}}</span>
+<a class="post-number" href="#post-{{number}}">#{{number}}</a>
+<time datetime="{{iso}}">{{when}}</time>
+{{#has_reply_to}}
+<span class="reply-to">in reply to <a href="#post-{{reply_to}}">#{{reply_to}}</a></span>
+{{/has_reply_to}}
+</header>
+<div class="post-body">
+{{{body}}}
+</div>
+</article>
+{{/posts}}
+</div>

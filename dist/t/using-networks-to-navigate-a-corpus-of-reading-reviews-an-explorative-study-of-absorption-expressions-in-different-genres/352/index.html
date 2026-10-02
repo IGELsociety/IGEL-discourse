@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using networks to navigate a corpus of reading-reviews. An explorative study of absorption expressions in different genres - Concordance (archive)</title>
+<link rel="canonical" href="https://discourse.igelsociety.org/t/using-networks-to-navigate-a-corpus-of-reading-reviews-an-explorative-study-of-absorption-expressions-in-different-genres/352/">
+<link rel="icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_32x32.png">
+<link rel="apple-touch-icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_180x180.png">
+<link rel="stylesheet" href="/archive.css">
+</head>
+<body class="page-topic">
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="archive-banner" role="note">This forum is archived and read-only. Snapshot taken 2026-10-01.</div>
+<header class="site-header">
+<a class="site-brand" href="/">
+<img class="site-logo" src="/uploads/default/original/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0.png" alt="">
+<span class="site-title">Concordance</span>
+</a>
+<nav class="site-nav" aria-label="Site">
+<a href="/">Home</a>
+<a href="/search/">Search</a>
+</nav>
+</header>
+<main id="content">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+&rsaquo; <a href="/c/igel2023/31/">IGEL 2023</a>
+</nav>
+<div class="topic" data-pagefind-body>
+<h1 data-pagefind-meta="title">Using networks to navigate a corpus of reading-reviews. An explorative study of absorption expressions in different genres</h1>
+<article class="post" id="post-1">
+<header class="post-header">
+<span class="post-author"><span class="author-name">Xiaoyan Yang</span> <span class="username">@X_Yang</span></span>
+<a class="post-number" href="#post-1">#1</a>
+<time datetime="2023-08-31T11:58:12Z">2023-08-31 11:58 UTC</time>
+</header>
+<div class="post-body">
+<p><img src="/images/emoji/twitter/speech_balloon.png?v=12" title=":speech_balloon:" class="emoji" alt=":speech_balloon:"> <strong>Speaker</strong>: Tina Ternes</p>
+<p><img src="/images/emoji/twitter/classical_building.png?v=12" title=":classical_building:" class="emoji" alt=":classical_building:"> <strong>Affiliation</strong>: Digital Humanities Lab, University of Basel</p>
+<p><strong>Title</strong>: <em>Using networks to navigate a corpus of reading-reviews. An explorative study of absorption expressions in different genres</em></p>
+<blockquote>
+<p><strong>Abstract</strong> (long version below): Today’s scientific landscape offers a wealth of digitally curated and annotated corpora, which are perfectly suited for large scale analysis, but their content is as interesting on a closer level. The data used for this study is from the “Mining Goodreads” project, in which a selection of reviews from Goodreads were manually annotated for mentions of absorption. The presented research aims to develop a network based method for preselecting meaningful clusters of texts from a corpus of reader reviews for further qualitative analysis, to gain a deeper understanding in how works of different genres are perceived and talked about.</p>
+</blockquote>
+<br>
+<p><a class="attachment" href="/uploads/short-url/eHhNL8unSqw0cJSSS9Zt5xdTij7.pdf" download="Ternes_Poster-compressed.pdf">Ternes_Poster-compressed.pdf</a> (2.5 MB)<br>
+<br></p>
+<p><img src="/images/emoji/twitter/newspaper.png?v=12" title=":newspaper:" class="emoji" alt=":newspaper:"> <strong>Long abstract</strong></p>
+<p><strong>Introduction</strong></p>
+<p>Online reader reviews have gained popularity in reading research, because, unlike data obtained in experimental settings, they provide a naturalistic testimony of reading experience as well as being available in huge numbers. Especially the second point allows for large structural investigations of reading behaviour (Koolen et al., 2020; Thelwall, 2019) and the relationship between books and their reviews (Chang et al., 2020), but close-reading analyses of single reviews have also been found to prove fruitful (Kuijpers, 2022).</p>
+<p>The current presentation aims to develop a Network Analysis method for preselecting meaningful clusters of reviews for further qualitative analysis, thereby bridging the gap between computational and qualitative approaches to the study of large corpora of reader reviews. The data used for this study is from the “Mining Goodreads” project (Rebora et al., 2020), in which a selection of 1025 reviews were manually annotated for mentions of absorption using an annotation scheme based on the Story World Absorption Scale (SWAS, Kuijpers et al., 2014).</p>
+<p>There has been research on the use of stylometric measures for other means than authorship attribution (Päpcke et al., 2022) and arguments have been made for the advantages of Network Analysis as an analysis tool for text clustering (Eder, 2017; Päpcke et al., 2022). Furthermore, Chang et al. (2020) found that “the similarities and differences between [books] […] do correlate with similarities and differences in reception—or, at any rate, in book reviews” (p. 7), whereby reviews of the same genre were found to be more similar to each other than to the rest of the corpus. Additionally, previous analyses performed on a smaller subset of the “Mining Goodreads” corpus showed that different genres inspired different types of absorption experiences (e.g., reviews of romance genres mentioned more Emotional Engagement, whereas reviews of thriller genres mentioned more Attention) (Rebora et al., 2021). Accordingly, genre is taken as the base category for the analysis since it seems to be an important factor in the general similarity of reviews as well as in eliciting absorption experiences.</p>
+<p><strong>Methods</strong></p>
+<p>The current work concentrates on a subcorpus of 199 reading reviews for 49 books of the genres Fantasy, Romance, Horror/Thriller, Mystery and Science Fiction, all of which contain absorption statements. The genre designations for the books in the corpus were determined by the users on Goodreads. They were chosen because they were best represented in the corpus (over 30 reviews each) as well as clearly definable, as opposed to genres such as “Young Adult” or “Classic”.</p>
+<p>To gain deeper insight into the relations between the reviews, first, the individual reviews were cleaned of any terms connected to the book they are describing, such as author- or character names, textworld-specific jargon (currency, types of vampires), title, etc., which will hopefully prevent overly strong ties between reviews of the same title. Secondly, text-similarity was operationalized by computing the Term Frequency-Inverse Document Frequency (TF-IDF), which was then used as the basis for a network visualisation. The resulting network data was clustered by the Louvain algorithm (Blondel et al., 2008).</p>
+<p>After obtaining a visualisation, the first point of interest to look into was whether all or some of the resulting clusters are homogeneous in terms of genre and which terms were most relevant for the categorization. Since the Louvain algorithm works without a preselection of expected clusters, it can be anticipated that there will be more clusters than genres. An interesting finding would be different clusters within the same genre. Here, it would be especially interesting whether this categorization was moderated by terms concerning the content of a book or the feelings about the book.</p>
+<p><strong>Results</strong></p>
+<p>Preliminary analyses could replicate previous results obtained from the corpus concerning patterns of absorption in different genres, such as Romance reviews having the highest percentage of sentences annotated as Emotional Engagement and Horror/Thriller scoring highest on Attention in comparison to the other genres as well as within the same genre (Rebora et al., 2021). Additionally, the current corpus showed that the relative frequency of absorption instances of Mystery mostly aligned with those of Horror/Thriller, while Fantasy scored comparatively higher in Transportation and Science Fiction reviews scored noticeably low on emotional engagement.</p>
+<p><strong>Conclusion</strong></p>
+<p>The work is still ongoing, but I hope to be able to present the following points.</p>
+<p>Depending on the homogeneity of the clusters, a closer look into outlier reviews could lead to relevant findings in what, for example, could be an unusually emotional Science Fiction review.</p>
+<p>Furthermore network measures such as centrality could help to discriminate between the most generic and distinctive reviews of a certain genre.</p>
+<p>Finally, the results of this network analysis will lead to an informed choice of a subset of reviews to be analysed in a qualitative manner, to gain a deeper understanding in how works of different genres are perceived and talked about.</p>
+<p><strong>References</strong></p>
+<p>Blondel, V. D., Guillaume, J.-L., Lambiotte, R., &amp; Lefebvre, E. (2008). Fast unfolding of communities in large networks. Journal of Statistical Mechanics: Theory and Experiment, 2008(P10008). <a href="https://doi.org/10.1088/1742-5468/2008/10/P10008" class="inline-onebox">ShieldSquare Captcha</a></p>
+<p>Chang, K., Hu, Y., Shang, W., Sharma, A., Singhal, S., Underwood, T., Witte, J., &amp; Wu, P. (2020). Book Reviews and the Consolidation of Genre. ADHO 2020. DH2020. <a href="https://hcommons.org/deposits/item/hc:31913/" class="inline-onebox">Book Reviews and the Consolidation of Genre | hc:31913 | Humanities CORE</a></p>
+<p>Eder, M. (2017). Visualization in stylometry: Cluster analysis using networks. Digital Scholarship in the Humanities, 32(1), 50–64. <a href="https://doi.org/10.1093/llc/fqv061">https://doi.org/10.1093/llc/fqv061</a></p>
+<p>Koolen, M., Boot, P., &amp; van Zundert, J. J. (2020). Online Book Reviews and the Computational Modelling of Reading Impact. Proceedings of the Workshop on Computational Humanities Research (CHR 2020), 2723, 149–169.</p>
+<p>Kuijpers, M. M. (2022). Bodily involvement in readers’ online book reviews: Applying Text World Theory to examine absorption in unprompted reader response. Journal of Literary Semantics, 51(2), 111–129. <a href="https://doi.org/10.1515/jls-2022-2055" class="inline-onebox">Bodily involvement in readers’ online book reviews: applying Text World Theory to examine absorption in unprompted reader response</a></p>
+<p>Kuijpers, M. M., Hakemulder, F., Tan, E. S., &amp; Doicaru, M. M. (2014). Exploring absorbing reading experiences: Developing and validating a self-report scale to measure story world absorption. Scientific Study of Literature, 4(1), 89–122. <a href="https://doi.org/10.1075/ssol.4.1.05kui" class="inline-onebox">Exploring absorbing reading experiences: Developing and validating a self-report scale to measure story world absorption | John Benjamins</a></p>
+<p>Päpcke, S., Weitin, T., Herget, K., Glawion, A., &amp; Brandes, U. (2022). Stylometric similarity in literary corpora: Non-authorship clustering and Deutscher Novellenschatz. Digital Scholarship in the Humanities, fqac039. <a href="https://doi.org/10.1093/llc/fqac039">https://doi.org/10.1093/llc/fqac039</a></p>
+<p>Rebora, S., Boot, P., Pianzola, F., Gasser, B., Herrmann, J. B., Kraxenberger, M., Kuijpers, M. M., Lauer, G., Lendvai, P., Messerli, T. C., &amp; Sorrentino, P. (2021). Digital humanities and digital social reading. Digital Scholarship in the Humanities, 36(2), ii230–ii250. <a href="https://doi.org/10.1093/llc/fqab020">https://doi.org/10.1093/llc/fqab020</a></p>
+<p>Rebora, S., Kuijpers, M., &amp; Lendvai, P. (2020). Mining Goodreads. A Digital Humanities Project for the Study of Reading Absorption. Sharing the Experience: Workflows for the Digital Humanities. Proceedings of the DARIAH-CH Workshop 2019. DARIAH-CH Workshop 2019, Neuchâtel: DARIAH-CAMPUS.</p>
+<p>Thelwall, M. (2019). Reader and author gender and genre in Goodreads. Journal of Librarianship and Information Science, 51(2), 403–430. <a href="https://doi.org/10.1177/0961000617709061">https://doi.org/10.1177/0961000617709061</a></p>
+</div>
+</article>
+</div>
+
+</main>
+<footer class="site-footer">
+<p>Archive snapshot taken 2026-10-01 &middot; Discourse 2.8.0.beta11</p>
+</footer>
+</body>
+</html>

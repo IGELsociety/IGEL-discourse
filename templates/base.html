@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page_title}}</title>
+{{#has_description}}
+<meta name="description" content="{{description}}">
+{{/has_description}}
+{{#noindex}}
+<meta name="robots" content="noindex">
+{{/noindex}}
+{{#has_canonical}}
+<link rel="canonical" href="{{canonical_url}}">
+{{/has_canonical}}
+{{#has_favicon}}
+<link rel="icon" href="{{favicon_url}}">
+{{/has_favicon}}
+{{#has_apple_touch_icon}}
+<link rel="apple-touch-icon" href="{{apple_touch_icon_url}}">
+{{/has_apple_touch_icon}}
+<link rel="stylesheet" href="/archive.css">
+</head>
+<body class="page-{{page_kind}}">
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="archive-banner" role="note">This forum is archived and read-only. Snapshot taken {{snapshot_date}}.</div>
+<header class="site-header">
+<a class="site-brand" href="/">
+{{#has_logo}}
+<img class="site-logo" src="{{logo_url}}" alt="">
+{{/has_logo}}
+<span class="site-title">{{site_title}}</span>
+</a>
+<nav class="site-nav" aria-label="Site">
+<a href="/">Home</a>
+<a href="/search/">Search</a>
+</nav>
+</header>
+<main id="content">
+{{{content}}}
+</main>
+<footer class="site-footer">
+<p>Archive snapshot taken {{snapshot_date}} &middot; Discourse {{discourse_version}}</p>
+</footer>
+</body>
+</html>

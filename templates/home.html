@@ -1,0 +1,30 @@
+<div class="home" data-pagefind-body>
+<h1 data-pagefind-meta="title">{{site_title}}</h1>
+{{#has_site_description}}
+<p class="site-description">{{site_description}}</p>
+{{/has_site_description}}
+<p class="archive-notice">This is a read-only archive of the {{site_title}} forum, kept as it was on {{snapshot_date}}. New topics, replies, likes and member profile pages are no longer available. Browse the categories below or use the <a href="/search/">search</a>.</p>
+<h2>Categories</h2>
+<ul class="category-index">
+{{#categories}}
+<li class="category-entry">
+<a class="category-name" href="{{path}}">{{name}}</a> <span class="topic-count">{{topic_count_label}}</span>
+{{#has_description}}
+<p class="category-description">{{description}}</p>
+{{/has_description}}
+{{#has_children}}
+<ul class="subcategory-index">
+{{#children}}
+<li class="category-entry">
+<a class="category-name" href="{{path}}">{{name}}</a> <span class="topic-count">{{topic_count_label}}</span>
+{{#has_description}}
+<p class="category-description">{{description}}</p>
+{{/has_description}}
+</li>
+{{/children}}
+</ul>
+{{/has_children}}
+</li>
+{{/categories}}
+</ul>
+</div>

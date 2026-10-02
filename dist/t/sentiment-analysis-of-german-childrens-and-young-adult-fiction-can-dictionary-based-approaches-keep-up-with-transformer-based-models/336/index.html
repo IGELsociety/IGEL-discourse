@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentiment Analysis of German children's and young adult fiction. Can dictionary-based approaches keep up with Transformer-based models? - Concordance (archive)</title>
+<link rel="canonical" href="https://discourse.igelsociety.org/t/sentiment-analysis-of-german-childrens-and-young-adult-fiction-can-dictionary-based-approaches-keep-up-with-transformer-based-models/336/">
+<link rel="icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_32x32.png">
+<link rel="apple-touch-icon" href="/uploads/default/optimized/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0_2_180x180.png">
+<link rel="stylesheet" href="/archive.css">
+</head>
+<body class="page-topic">
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="archive-banner" role="note">This forum is archived and read-only. Snapshot taken 2026-10-01.</div>
+<header class="site-header">
+<a class="site-brand" href="/">
+<img class="site-logo" src="/uploads/default/original/1X/ce13a05383f0c1cc897558e9e2946d5df6f867b0.png" alt="">
+<span class="site-title">Concordance</span>
+</a>
+<nav class="site-nav" aria-label="Site">
+<a href="/">Home</a>
+<a href="/search/">Search</a>
+</nav>
+</header>
+<main id="content">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+&rsaquo; <a href="/c/igel2023/31/">IGEL 2023</a>
+</nav>
+<div class="topic" data-pagefind-body>
+<h1 data-pagefind-meta="title">Sentiment Analysis of German children's and young adult fiction. Can dictionary-based approaches keep up with Transformer-based models?</h1>
+<article class="post" id="post-1">
+<header class="post-header">
+<span class="post-author"><span class="author-name">Simone Rebora</span> <span class="username">@srebora</span></span>
+<a class="post-number" href="#post-1">#1</a>
+<time datetime="2023-08-30T15:01:32Z">2023-08-30 15:01 UTC</time>
+</header>
+<div class="post-body">
+<p><img src="/images/emoji/twitter/speech_balloon.png?v=12" title=":speech_balloon:" class="emoji" alt=":speech_balloon:"> <strong>Speaker</strong>: Simone Rebora <span class="mention">@srebora</span>, Marina Lehmann <span class="mention">@Marina_Le</span>, Anne Heumann</p>
+<p><img src="/images/emoji/twitter/classical_building.png?v=12" title=":classical_building:" class="emoji" alt=":classical_building:"> <strong>Affiliation</strong>: Johannes Gutenberg University of Mainz</p>
+<p><strong>Title</strong>: *Sentiment Analysis of German children’s and young adult fiction. Can dictionary-based approaches keep up with Transformer-based models? *</p>
+<blockquote>
+<p><strong>Abstract</strong> (long version below): In this paper, we present two studies comparing a dictionary-based approach (“SentiArt”) with Transformer models for Sentiment Analysis in German. As ground truth data we use reader response ratings from the 4books dataset. In the first study SentiArt is adapted to the dataset and Transformer models are fine-tuned before comparing their performance. Here, Transformers clearly outperform SentiArt. In the second study the performance of SentiArt without adaptation is compared to pretrained Transformers from different domains (without fine-tuning). In this case, SentiArt performs better than pretrained Transformers. We conclude that SentiArt continues to be a valuable alternative when the resources for fine-tuning (e.g. human raters, high computing power) are not available.</p>
+</blockquote>
+<br>
+<p><img src="/images/emoji/twitter/movie_camera.png?v=12" title=":movie_camera:" class="emoji only-emoji" alt=":movie_camera:"></p><div class="onebox lazyYT lazyYT-container"><a href="https://www.youtube.com/watch?v=oKmwBjZ-45U" target="_blank" rel="noopener nofollow ugc"><img class="ytp-thumbnail-image" src="/uploads/default/original/1X/63a82fa0ab74f705f15a3fbd0713b21cbdbc1809.jpeg" title="Sentiment Analysis of German children's and young adult fiction– Rebora, Lehmann, Heumann (IGEL2023)" width="480" height="360" alt="Sentiment Analysis of German children's and young adult fiction– Rebora, Lehmann, Heumann (IGEL2023)"><span class="video-title">Sentiment Analysis of German children's and young adult fiction– Rebora, Lehmann, Heumann (IGEL2023)</span></a></div>
+
+<br>
+<p><img src="/images/emoji/twitter/newspaper.png?v=12" title=":newspaper:" class="emoji" alt=":newspaper:"> <strong>Long abstract</strong></p>
+<p>This paper presents a comparison between two main approaches in Sentiment Analysis: dictionary-based approaches (Fehle et al. 2021) and Transformer-based approaches (for previous performance comparisons, see: Rebora et al. 2022). We used SentiArt (Jacobs 2019) as a dictionary-based approach and we took as reference point the 4books dataset (Lüdtke and Jacobs 2023), an extensive collection of reader responses to four children’s and young adult novels in German. Such a comparison is the necessary groundwork for the development of a research that aims at predicting reader responses to narratives.</p>
+<p>The 4books dataset, developed in the context of the CHYLSA project (“Children’s and Youth Literature Sentiment Analysis”), hosts a wide variety of reader response ratings (ranging from valence and arousal to suspense and transportation) for two children’s novels (Mebs 2005; Ende 2020) and two young adult novels (Green 2012; Rowling 2018). For our studies, we took as ground truth the mean of the valence ratings (scale: -3 to +3) added in parallel by 20 readers (all German mother tongue, mean age = 22.9, sd = 5.04) on the 22,860 sentences of the four books.</p>
+<p>Transformer models have been applied widely in Sentiment Analysis in recent years and are considered as a promising approach (Schmidt 2022). However, they also require a considerable amount of computing power and large training corpora to unfold their full potential. Therefore, for many research scenarios in which those requirements are not available, dictionary-based approaches are still the method of choice. SentiArt is a special kind of dictionary-based Sentiment Analysis tool, as it can be tailored to different contexts via vector space representations of language (Joulin et al. 2017). If an extensive corpus of texts from a certain language, period, or genre is available, SentiArt’s sentiment dictionary can be modified automatically by calculating distances between all words in the corpus and a predefined set of seed words (expressing basic emotions, positive/negative valence, etc.). Transformer models are similarly based on vector representations of language, but they are more complex, implying for example the usage of context-dependent vector representations, deep neural networks with self-attention mechanisms (to identify which parts of a sentence are more important for determining its meaning), and bidirectional processing of text (including context information from both directions to allow a better recognition of its syntactic structure). However, these advantages come at the cost of high computing power since Transformer models need graphics processing units (GPUs) to be fine-tuned.</p>
+<p>We performed our comparison through two studies. In the first one, we adapted SentiArt and fine-tuned the Transformer models to the 4books dataset. We predicted the valence on a sentence level by using ratings of 20 readers as point of reference. For Transformers, the basic German language model “gbert-base” (Chen et al. 2020) was fine-tuned using the human ratings for linear regression. For adapting SentiArt, first we applied univariate linear regression using as a predictor the Affective-Aesthetic Potential scores, produced for each sentence by calculating the mean of the scores assigned by the sentiment dictionary to content words. Second, we applied multivariate linear regression, random forest, and feedforward neural networks with 21 predictors (such as Ekman’s six basic emotions, abstractness/concreteness, and many others). Figure 1 shows the results obtained by calculating R2 in a 10-fold cross validation procedure repeated for each book. Overall, the most basic Transformer model clearly outperforms all attempted approaches with SentiArt.</p>
+<p></p><a class="lightbox" href="/uploads/default/original/1X/5212576f00ce9aee04a5dadbc3834ee62f2da1ba.png" title="image"><img src="/uploads/default/optimized/1X/5212576f00ce9aee04a5dadbc3834ee62f2da1ba_2_690x388.png" alt="image" width="690" height="388" srcset="/uploads/default/optimized/1X/5212576f00ce9aee04a5dadbc3834ee62f2da1ba_2_690x388.png, /uploads/default/optimized/1X/5212576f00ce9aee04a5dadbc3834ee62f2da1ba_2_1035x582.png 1.5x, /uploads/default/optimized/1X/5212576f00ce9aee04a5dadbc3834ee62f2da1ba_2_1380x776.png 2x"></a>
+<p>Figure 1. Results of first study.</p>
+<p>In the second study, we decided to also test pretrained Transformer models and SentiArt without adaptation. We did this in order to emulate a typical situation in research, where resources for extensive rating campaigns (like the one for the 4books dataset) might not be available and researchers are frequently obliged to rely just on the available tools and datasets. For Transformers, we searched the Hugging Face repository for any pretrained model tagged for German that contained the “sentiment” keyword (on March 3, 2023, the search produced seven results, six of which were usable via the <em>transformers</em> Python package, cf. Wolf et al. 2020). When applied to text, the models produced a set of probabilities related to three to five different classes (“positive”, “neutral”, and “negative” in different nuances). To convert these probabilities into a single score for each sentence, we first converted classes to numbers (e.g. “positive”: +1; “neutral”: 0; “negative”: -1), we then multiplied each number by the probability of the corresponding class and finally summed the obtained values (a procedure that can be synthetically described as a “weighted mean”). For SentiArt, we simply used the mean Affective-Aesthetic Potential scores per sentence (see above, univariate approach from study 1). Table 1 shows Pearson correlation coefficients for the predicted and actual values: with just one marginal exception, SentiArt always outperforms pretrained Transformer models.</p>
+<p></p><a class="lightbox" href="/uploads/default/original/1X/c953144186bb7152534380e0f4bd657864985ebe.png" title="image"><img src="/uploads/default/optimized/1X/c953144186bb7152534380e0f4bd657864985ebe_2_690x249.png" alt="image" width="690" height="249" srcset="/uploads/default/optimized/1X/c953144186bb7152534380e0f4bd657864985ebe_2_690x249.png, /uploads/default/optimized/1X/c953144186bb7152534380e0f4bd657864985ebe_2_1035x373.png 1.5x, /uploads/default/original/1X/c953144186bb7152534380e0f4bd657864985ebe.png 2x"></a>
+<p>Table 1. Results of second study.</p>
+<p>It should also be noted how Sentiment Analysis in literary studies generally focuses on large-scale phenomena like emotional arcs and plot structures, which do not require high efficiency at the level of the sentence. The weak correlation scores shown in Table 1 increase in fact substantially (&gt;0.69 for SentiArt) when applying a 10% moving average to the sentence scores, as done by Jockers (2014) to generate his “plot arcs”.</p>
+<p>Our research has shown how, notwithstanding the undeniable potential of fine-tuned Transformer models, SentiArt remains a valuable option whenever computing power and training data for fine-tuning Transformer models are not available. Compared to pretrained Transformer models, SentiArt has also the advantage of a higher explainability (contrary to the “opaqueness” of deep neural networks), it is faster, and it requires less computational power (being in a sense more environmentally friendly). Unavoidably, the results presented in this paper depend on the characteristics of the dataset (results might differ for different languages and genres), but they suggest how, for computational research on reader responses to literary texts, fine-tuned Transformer models provide the best performance, but dictionary-based Sentiment Analysis methods like SentiArt can and should still be adopted if resources are limited. Therefore, future research could focus not only on optimising the fine-tuning process for Transformer models, but also on improving dictionary-based approaches (like considering emotion shifters such as negations/intensifiers, or giving different weights to different parts of speech).</p>
+<p><strong>References</strong></p>
+<p>Chan, Branden, Stefan Schweter, and Timo Möller. “gbert-base.” Hugging Face. Accessed March 3, 2023. <a href="https://huggingface.co/deepset/gbert-base" class="inline-onebox" rel="noopener nofollow ugc">deepset/gbert-base · Hugging Face</a>.</p>
+<p>CitizenLabDotCo. “twitter-xlm-roberta-base-sentiment-finetunned.” Hugging Face. Accessed March 3, 2023. <a href="https://huggingface.co/citizenlab/twitter-xlm-roberta-base-sentiment-" rel="noopener nofollow ugc">https://huggingface.co/citizenlab/twitter-xlm-roberta-base-sentiment-</a> finetunned.</p>
+<p>Ende, Michael. 2020. <em>Jim Knopf und Lukas der Lokomotivführer</em> . 19th edition. Stuttgart: Thienemann.</p>
+<p>Fehle, Jakob, Schmidt, Thomas, and Christian Wolff. 2021. Lexicon-based Sentiment Analysis in German. Systematic Evaluation of Resources and Preprocessing Techniques, In <em>Proceedings of the 17th Conference on Natural Language Processing (KONVENS 2021)</em> , 86–103, Düsseldorf, Germany. KONVENS 2021 Organizers.</p>
+<p>Green, John. 2012. <em>Das Schicksal ist ein mieser Verräter</em> . Translated by Sophie Zeitz. 4th edition. München: Hanser.</p>
+<p>Guhr, Oliver, Anne-Kathrin Schumann, Frank Bahrmann, and Hans Joachim Böhme. “german-sentiment-bert.” Hugging Face. Accessed March 3, 2023. <a href="https://huggingface.co/oliverguhr/german-sentiment-bert" class="inline-onebox" rel="noopener nofollow ugc">oliverguhr/german-sentiment-bert · Hugging Face</a>.</p>
+<p>Jacobs, Arthur M. 2019. “Sentiment Analysis for Words and Fiction Characters From the Perspective of Computational (Neuro-)Poetics.” <em>Frontiers in Robotics and AI</em> 6 (July). <a href="https://doi.org/10.3389/frobt.2019.00053" rel="noopener nofollow ugc">https://doi.org/10.3389/frobt.2019.00053</a>.</p>
+<p>Jockers, Matthew. 2014. “A Novel Method for Detecting Plot.” 2014. <a href="http://www.matthewjockers.net/2014/06/05/a-novel-method-for-detecting-plot/" rel="noopener nofollow ugc">http://www.matthewjockers.net/2014/06/05/a-novel-method-for-detecting-plot/</a>.</p>
+<p>Joulin, Armand, Edouard Grave, Piotr Bojanowski, and Tomas Mikolov. 2017. “Bag of Tricks for Efficient Text Classification.” In <em>Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 2, Short Papers</em> , 427–31. Association for Computational Linguistics.</p>
+<p>Lüdtke, Jana, and Arthur M. Jacobs. 2023. “On a rollercoaster with Frieder, Jim, Hazel and Harry: Identifying emotional arcs in reader responses to children and youth books”, IGEL 2023 Conference Abstract.</p>
+<p>Mebs, Gudrun. 2005. <em>“Oma!”, schreit der Frieder</em> . 20. Auflage. Aarau, Frankfurt am Main: Sauerländer.</p>
+<p>Nezhurina, Marianna. “bert-multilingual-sentiment.” Hugging Face. Accessed March 3, 2023. <a href="https://huggingface.co/marianna13/bert-multilingual-sentiment/tree/main" class="inline-onebox" rel="noopener nofollow ugc">marianna13/bert-multilingual-sentiment at main</a>.</p>
+<p>NLP Town. “bert-base-multilingual-uncased-sentiment.” Hugging Face. Accessed March 3, 2023. <a href="https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment" class="inline-onebox" rel="noopener nofollow ugc">nlptown/bert-base-multilingual-uncased-sentiment · Hugging Face</a>.</p>
+<p>Rebora, Simone, Thomas C. Messerli, and J. Berenike Herrmann. 2022. “Towards a Computational Study of German Book Reviews. A Comparison between Emotion Dictionaries and Transfer Learning in Sentiment Analysis.” In <em>DHd2022: Kulturen Des Digitalen Gedächtnisses</em> . Konferenzabstracts, 354–56.</p>
+<p>Rothlin, Tobias. “bert-base-german-cased_German_Hotel_sentiment.” Hugging Face. Accessed March 3, 2023. <a href="https://huggingface.co/Tobias/bert-base-german-" rel="noopener nofollow ugc">https://huggingface.co/Tobias/bert-base-german-</a> cased_German_Hotel_sentiment.</p>
+<p>Rowling, J. K. 2018. <em>Harry Potter und der Halbblutprinz</em> . Translated by Klaus Fritz. Harry Potter 6. Hamburg: Carlsen.</p>
+<p>Schmidt, Thomas , Jakob Fehle, Maximilian Weissenbacher, Jonathan Richter, Philipp Gottschalk, and Christian Wolff. 2022. “Sentiment Analysis on Twitter for the Major German Parties during the 2021 German Federal Election.” In <em>Proceedings of the 18th Conference on Natural Language Processing (KONVENS 2022)</em> , 74–87, Potsdam, Germany. KONVENS 2022 Organizers.</p>
+<p>Weissenbacher, Max. “gBERt_base_twitter_sentiment_politicians.” Hugging Face. Accessed March 3, 2023. <a href="https://huggingface.co/mox/gBERt_base_twitter_sentiment_politicians" class="inline-onebox" rel="noopener nofollow ugc">mox/gBERt_base_twitter_sentiment_politicians · Hugging Face</a>.</p>
+<p>Wolf, Thomas, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, et al. 2020. “Transformers: State-of-the-Art Natural Language Processing.” In <em>Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations</em> , 38–45. Online: Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/2020.emnlp-demos.6" class="inline-onebox" rel="noopener nofollow ugc">Transformers: State-of-the-Art Natural Language Processing - ACL Anthology</a>.</p>
+</div>
+</article>
+</div>
+
+</main>
+<footer class="site-footer">
+<p>Archive snapshot taken 2026-10-01 &middot; Discourse 2.8.0.beta11</p>
+</footer>
+</body>
+</html>

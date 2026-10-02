@@ -1,0 +1,24 @@
+# Phase 0 preservation master (full DB dump: emails, IPs, PMs) and credentials: never commit
+*.tar.gz
+discourse-api.txt
+
+# byte-exact harvest, UNREDACTED (emails, Zoom passcodes, avatar images): never commit.
+# raw/ is the redacted copy derived from it by R/01b_redact.R.
+raw_verbatim/
+# log of the unredacted harvest (it names the avatar files that raw/ leaves out)
+harvest.log
+# working directories of R/01b_redact.R; a hard kill can leave one behind until the next run
+raw.redact-tmp/
+raw.redact-old/
+
+# dist/ IS committed: Cloudflare Pages has no R, so it deploys the prebuilt site (see README, "Deploying").
+# Only its working directories and the reports of a run are ignored.
+dist.build-tmp/
+dist.build-old/
+build-report.json
+build-report.json.part
+audit-report.json
+
+.Rhistory
+.RData
+.DS_Store

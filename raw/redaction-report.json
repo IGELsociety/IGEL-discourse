@@ -1,0 +1,227 @@
+{
+  "derived_from": "raw_verbatim",
+  "source_manifest_sha256": "654adc9e3ee00fd5fa70e84e1e2ecc1bae68a8b393b7a6112549fbfc10c7bad8",
+  "harvested_at_utc": "2026-10-01T13:15:54Z",
+  "rules": [
+    {
+      "id": "R1",
+      "kind": "regex",
+      "description": "mailto anchor becomes a span with class email-redacted; its visible text goes through R2",
+      "pattern": "(?is)<a\\s(?:[^>]*?\\s)?href\\s*=\\s*(?:\"mailto:[^\"]*\"|'mailto:[^']*')[^>]*>(.*?)<\/a\\s*>",
+      "replacement": "<span class=\"email-redacted\">\\1<\/span>",
+      "count": 9,
+      "matches_in_source": 9
+    },
+    {
+      "id": "R2",
+      "kind": "regex",
+      "description": "e-mail address, unless its last label is an image extension (retina image names stay)",
+      "pattern": "(?:\\G|(?<![A-Za-z0-9._%+-]))[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*\\.(?!(?i:png|jpg|jpeg|gif|webp|svg|bmp|ico)(?![A-Za-z]))[A-Za-z]{2,}",
+      "replacement": "[email redacted]",
+      "count": 16,
+      "matches_in_source": 25
+    },
+    {
+      "id": "R3",
+      "kind": "regex",
+      "description": "obfuscated address: local part, domain and tld with at and dot spelled out in (), [] or {}",
+      "pattern": "(?i)(?:\\G|(?<![A-Za-z0-9._%+-]))[A-Za-z0-9._%+-]+[ \\t]*(?:\\([ \\t]*at[ \\t]*\\)|\\[[ \\t]*at[ \\t]*\\]|\\{[ \\t]*at[ \\t]*\\})[ \\t]*[A-Za-z0-9-]+(?:(?:[ \\t]*(?:\\([ \\t]*dot[ \\t]*\\)|\\[[ \\t]*dot[ \\t]*\\]|\\{[ \\t]*dot[ \\t]*\\})[ \\t]*|\\.)[A-Za-z0-9-]+)*[ \\t]*(?:\\([ \\t]*dot[ \\t]*\\)|\\[[ \\t]*dot[ \\t]*\\]|\\{[ \\t]*dot[ \\t]*\\})[ \\t]*[A-Za-z]{2,}",
+      "replacement": "[email redacted]",
+      "count": 1,
+      "matches_in_source": 1
+    },
+    {
+      "id": "R4",
+      "kind": "regex",
+      "description": "value of a pwd, passcode or password URL query parameter",
+      "pattern": "([?&;](?i:pwd|passcode|password)=)(?!REDACTED(?:[\\s\"'<>&#]|\\z))[^\\s\"'<>&#]+",
+      "replacement": "\\1REDACTED",
+      "count": 104,
+      "matches_in_source": 104
+    },
+    {
+      "id": "R5",
+      "kind": "regex",
+      "description": "passcode written out in plain text: a label such as Kenncode or Passwort, a colon or equals sign, then a token of 4-12 letters or digits with at least one digit; only the token is replaced",
+      "pattern": "(?i)(\\b(?:kenncode|kennwort|passcode|passwort|password|zugangscode|wachtwoord|toegangscode)\\b[ \\t]*[:=][ \\t]*)(?=[A-Za-z0-9]*[0-9])[A-Za-z0-9]{4,12}\\b",
+      "replacement": "\\1REDACTED",
+      "count": 2,
+      "matches_in_source": 2
+    },
+    {
+      "id": "R6",
+      "kind": "values",
+      "description": "copy of a redacted passcode value in the same string, e.g. in a heading anchor name or href (Discourse derives anchors from the heading text, which held the whole Zoom link)",
+      "pattern": "(not a pattern) every R4 passcode value of 12+ characters, and its lower-case hyphenated slug form, case-insensitive, in the same string; the values are not recorded",
+      "replacement": "REDACTED",
+      "count": 10,
+      "matches_in_source": 10
+    },
+    {
+      "id": "O1",
+      "kind": "omit",
+      "description": "avatar images are left out; their entries are dropped from assets-report.json",
+      "path_prefixes": [
+        "assets/user_avatar/",
+        "assets/letter_avatar_proxy/"
+      ],
+      "count": 2
+    }
+  ],
+  "note": "count is the number of replacements made, applied in the order R1, R2, R3, R4, R5. matches_in_source is how often the pattern matches the unredacted strings; it is higher for R2 because the address inside the href of a removed mailto anchor (R1) is gone before R2 runs, and it can be higher for R5 when R4 already replaced the value of a passcode or password parameter. The R2 and R3 patterns start with a zero-width guard that only keeps matching fast on long runs of address characters; it does not change what matches. R6 removes copies of the passcode values R4 redacted (heading anchors); it is counted after R4 and its values are never written anywhere. Addresses of the allowlist are set aside before the rules run, so they are in neither count nor matches_in_source; allowlist.addresses[].kept says how many of each were left in place.",
+  "allowlist": {
+    "file": "redaction-allowlist.json",
+    "sha256": "4f1cdd72df3c72a4a80c5e55b5d862dd0eb08c91b8ba008acedb03d660fa2451",
+    "addresses": [
+      {
+        "address": "info@rcc.ie",
+        "reason": "Dublin Rape Crisis Centre helpline, in the support list of topic 756 (content warning note)",
+        "kept": 1
+      },
+      {
+        "address": "info@oneinfour.ie",
+        "reason": "One in Four, support for adult survivors of child sexual abuse, in the support list of topic 756",
+        "kept": 1
+      }
+    ],
+    "total_kept": 2
+  },
+  "total_redactions": 142,
+  "files_modified": 17,
+  "per_file": [
+    {
+      "file": "about.json",
+      "rule": "R2",
+      "n": 1
+    },
+    {
+      "file": "topic/144.json",
+      "rule": "R3",
+      "n": 1
+    },
+    {
+      "file": "topic/178.json",
+      "rule": "R4",
+      "n": 43
+    },
+    {
+      "file": "topic/178.json",
+      "rule": "R6",
+      "n": 10
+    },
+    {
+      "file": "topic/203.json",
+      "rule": "R1",
+      "n": 1
+    },
+    {
+      "file": "topic/203.json",
+      "rule": "R2",
+      "n": 1
+    },
+    {
+      "file": "topic/236.json",
+      "rule": "R2",
+      "n": 1
+    },
+    {
+      "file": "topic/40.json",
+      "rule": "R1",
+      "n": 1
+    },
+    {
+      "file": "topic/40.json",
+      "rule": "R2",
+      "n": 1
+    },
+    {
+      "file": "topic/515.json",
+      "rule": "R2",
+      "n": 1
+    },
+    {
+      "file": "topic/527.json",
+      "rule": "R4",
+      "n": 13
+    },
+    {
+      "file": "topic/527.json",
+      "rule": "R5",
+      "n": 2
+    },
+    {
+      "file": "topic/57.json",
+      "rule": "R1",
+      "n": 2
+    },
+    {
+      "file": "topic/57.json",
+      "rule": "R2",
+      "n": 2
+    },
+    {
+      "file": "topic/699.json",
+      "rule": "R2",
+      "n": 1
+    },
+    {
+      "file": "topic/711.json",
+      "rule": "R4",
+      "n": 48
+    },
+    {
+      "file": "topic/749.json",
+      "rule": "R1",
+      "n": 1
+    },
+    {
+      "file": "topic/749.json",
+      "rule": "R2",
+      "n": 2
+    },
+    {
+      "file": "topic/756.json",
+      "rule": "R2",
+      "n": 1
+    },
+    {
+      "file": "topic/79.json",
+      "rule": "R1",
+      "n": 2
+    },
+    {
+      "file": "topic/79.json",
+      "rule": "R2",
+      "n": 2
+    },
+    {
+      "file": "topic/80.json",
+      "rule": "R1",
+      "n": 2
+    },
+    {
+      "file": "topic/80.json",
+      "rule": "R2",
+      "n": 2
+    },
+    {
+      "file": "topic/87.json",
+      "rule": "R2",
+      "n": 1
+    }
+  ],
+  "omitted": [
+    {
+      "file": "assets/letter_avatar_proxy/v4/letter/a/7ea924/40.png",
+      "reason": "O1: avatar image"
+    },
+    {
+      "file": "assets/user_avatar/discourse.igelsociety.org/lynneekhof/40/51_2.png",
+      "reason": "O1: avatar image"
+    }
+  ],
+  "assets_report_entries_removed": {
+    "assets": 2,
+    "missing": 0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "note": "E-mail addresses that R/01b_redact.R must leave in place: general addresses of organisations that are published on purpose. Matched case-insensitively and only as whole addresses. Everything else is redacted.",
+  "addresses": [
+    {
+      "address": "info@rcc.ie",
+      "reason": "Dublin Rape Crisis Centre helpline, in the support list of topic 756 (content warning note)"
+    },
+    {
+      "address": "info@oneinfour.ie",
+      "reason": "One in Four, support for adult survivors of child sexual abuse, in the support list of topic 756"
+    }
+  ]
+}
