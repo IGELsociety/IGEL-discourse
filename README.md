@@ -39,6 +39,13 @@ make all        # build + search + redirects + audit  (raw/ -> dist/, ends with 
 A build replaces `dist/` entirely, so always run `make all` (not `make build` alone): the search index and the
 redirects are generated after the build. `make all` works from a fresh clone, because `raw/` is committed.
 
+## Home page
+
+`templates/home.html` has the Pagefind search box under the title. `home_data()` in `R/02_build.R` lists the IGEL
+conference categories first (any top-level slug `igelYYYY`: `igel2025`, `igel2024` ...), newest year first, and
+the other categories after them in the forum's own order. The home page and `/search/` are the only pages with a
+`<script>` (the search widget): the build's self-check and audit check 9 reject a script anywhere else.
+
 ## Privacy decisions
 
 - **Redacted in `raw/`:** e-mail addresses and mailto links (27 found, 25 redacted), Zoom passcodes in links, in plain

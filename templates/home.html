@@ -3,6 +3,15 @@
 {{#has_site_description}}
 <p class="site-description">{{site_description}}</p>
 {{/has_site_description}}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<div id="search"></div>
+<noscript><p class="no-script">Search needs JavaScript. Without it, browse the categories below.</p></noscript>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+  new PagefindUI({ element: "#search", showImages: false, showSubResults: true, translations: { placeholder: "Search all archived topics" } });
+});
+</script>
 <p class="archive-notice">This is a read-only archive of the {{site_title}} forum, kept as it was on {{snapshot_date}}. New topics, replies, likes and member profile pages are no longer available. Browse the categories below or use the <a href="/search/">search</a>.</p>
 <h2>Categories</h2>
 <ul class="category-index">

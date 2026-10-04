@@ -76,6 +76,8 @@ URL_RE    <- "(?s)^(?:([A-Za-z][A-Za-z0-9+.-]*):)?(?://([^/?#]*))?([^?#]*)(?:\\?
 ALLOWED_DATA_ATTRS <- c("data-pagefind-body", "data-pagefind-meta", "data-pagefind-filter")
 FORBIDDEN_STRINGS  <- c("trust_level", "avatar_template", "user_title", "last_seen", "ip_address", "primary_group")
 FORBIDDEN_ELEMENTS <- c("iframe", "object", "embed", "form")
+# The pages that carry the Pagefind search widget: a <script> is allowed there and nowhere else.
+SEARCH_WIDGET_PAGES <- c("search/index.html", "index.html")
 USER_PREFIXES      <- c("/u", "/users", "/groups", "/g")
 
 # Elements that start a new line of text (inline ones, and unknown ones, are transparent: a word split by
@@ -1549,7 +1551,7 @@ check_minimisation <- function(ctx) {
   for (pg in ctx$pages) {
     if (is.null(pg$doc)) next
     el <- xml2::xml_name(xml2::xml_find_all(pg$doc, forbidden_xpath))
-    bad <- if (pg$rel == "search/index.html") el[el != "script"] else el
+    bad <- if (pg$rel %in% SEARCH_WIDGET_PAGES) el[el != "script"] else el
     n_script <- n_script + sum(bad == "script")
     n_embedded <- n_embedded + sum(bad != "script")
     if (length(bad) > 0L) found <- rbind(found, data.frame(page = pg$rel, what = sprintf("<%s>", bad), stringsAsFactors = FALSE))
@@ -1563,11 +1565,11 @@ check_minimisation <- function(ctx) {
   tally <- count_by(sprintf("%s: %s", found$page, found$what))
   failures <- sprintf("%s (%d)", names(tally), tally)
   make_row("9", "Data minimisation", verdict(failures),
-           sprintf(paste("%d pages: %d avatars, %d user/group links, %d data-* attributes, %d scripts outside search,",
+           sprintf(paste("%d pages: %d avatars, %d user/group links, %d data-* attributes, %d scripts outside the search and home pages,",
                          "%d iframe/object/embed/form, %d event handlers, %d javascript: URLs, %d forbidden strings"),
                    length(ctx$pages), sum(avatar), sum(user_link), sum(data_attr), n_script, n_embedded, sum(handler), sum(js), n_strings),
            failures, data = list(pages = length(ctx$pages), avatars = sum(avatar), user_links = sum(user_link),
-                                 data_attributes = sum(data_attr), scripts_outside_search = n_script,
+                                 data_attributes = sum(data_attr), scripts_outside_widget_pages = n_script,
                                  iframe_object_embed_form = n_embedded, event_handlers = sum(handler), javascript_urls = sum(js),
                                  forbidden_strings = n_strings))
 }

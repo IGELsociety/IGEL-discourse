@@ -5,7 +5,7 @@
 #
 # Reads ONLY --raw (default "raw", made by R/01b_redact.R) and templates/; there is no network access.
 # Writes --out (default "dist"), with the same URLs as the live forum:
-#   index.html                      home: category index
+#   index.html                      home: search box and category index (IGEL conferences first, newest first)
 #   c/{slug}/{id}/index.html        top-level category (subcategories: c/{parent}/{slug}/{id}/index.html)
 #   t/{slug}/{id}/index.html        topic, all posts on one page
 #   search/index.html               Pagefind UI page (the index itself is built in Phase 3)
@@ -56,6 +56,12 @@ TEMPLATE_FILES   <- c(base = "base.html", home = "home.html", category = "catego
 
 RENDERED_POST_TYPES <- c(1L, 2L)       # regular post, moderator action
 SYSTEM_POST_TYPE    <- 3L              # "small action" (pinned, closed ...): always empty, skipped
+
+# Home page: the categories of the IGEL conferences (slugs igel2025, igel2024 ...) come first, newest year first;
+# the other categories follow in the forum's own order.
+CONFERENCE_SLUG     <- "^igel([0-9]{4})$"
+# Only the pages that carry the Pagefind search widget may contain a <script>.
+SEARCH_WIDGET_KINDS <- c("search", "home")
 
 # ---- what the cooked-HTML walker keeps -----------------------------------------------------------
 
@@ -1135,8 +1141,16 @@ crumbs_of <- function(k, cats) {
   lapply(chain, function(x) list(name = x$name, path = x$path, has_link = TRUE))
 }
 
+# The top-level categories in home-page order. `tops` arrives in forum order and the sort is stable, so the
+# categories that are not conferences keep that order.
+conferences_first <- function(tops) {
+  is_conf <- vapply(tops, function(k) grepl(CONFERENCE_SLUG, k$slug), NA)
+  year <- vapply(tops[is_conf], function(k) as.integer(sub(CONFERENCE_SLUG, "\\1", k$slug)), 1L)
+  c(tops[is_conf][order(-year, method = "radix")], tops[!is_conf])
+}
+
 home_data <- function(site, cats, counts) {
-  tops <- Filter(function(k) is.na(k$parent_id), cats)
+  tops <- conferences_first(Filter(function(k) is.na(k$parent_id), cats))
   entries <- lapply(tops, function(k) {
     kids <- Filter(function(x) identical(x$parent_id, k$id), cats)
     c(category_entry(k, counts[[as.character(k$id)]]),
@@ -1273,7 +1287,7 @@ check_page <- function(html, where, kind) {
     subject <- if (what == "an e-mail address") without_allowed(html) else html
     if (grepl(PAGE_RULES[[what]], subject, perl = TRUE)) abort("Self-check failed: ", where, " contains ", what)
   }
-  if (kind != "search" && grepl("(?i)<script\\b", html, perl = TRUE)) abort("Self-check failed: ", where, " contains a <script>")
+  if (!kind %in% SEARCH_WIDGET_KINDS && grepl("(?i)<script\\b", html, perl = TRUE)) abort("Self-check failed: ", where, " contains a <script>")
   if (grepl("(?i)<iframe\\b|<object\\b|<embed\\b|<form\\b|\\son[a-z]+\\s*=\\s*\"", html, perl = TRUE)) {
     abort("Self-check failed: ", where, " contains an iframe, object, embed, form or event handler")
   }
